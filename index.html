@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسبيحة | Tasbeha - أزياء هاند ميد وفن ترتديه</title>
+    <meta name="description" content="تسبيحة - براند أزياء هاند ميد مصري أصيل. فساتين مرسومة يدوياً، عبايات فنية، إسكارفات مطرزة بالأحجار، وإكسسوارات فريدة. كل قطعة لوحة فنية خاصة بك.">
+    <meta name="keywords" content="تسبيحة, tasbeha, هاند ميد, ملابس مرسومة, عبايات فنية, فساتين هاند ميد, إسكارف مطرز, أزياء مصرية, handmade fashion egypt">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="تسبيحة | Tasbeha - أزياء هاند ميد وفن ترتديه">
+    <meta property="og:description" content="براند مصري للأزياء الهاند ميد. فساتين مرسومة يدوياً، عبايات فنية، إسكارفات مطرزة. كل قطعة لوحة فنية فريدة.">
+    <meta property="og:image" content="products/product-57.jpg">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f9ece4',
+                            200: '#f3d5c4',
+                            300: '#e8b598',
+                            400: '#d4845a',
+                            500: '#c4693e',
+                            600: '#b55a34',
+                            700: '#97482d',
+                            800: '#7a3c2a',
+                            900: '#643425',
+                            950: '#361912',
+                        },
+                        gold: {
+                            50: '#fefce8',
+                            100: '#fef9c3',
+                            200: '#fef08a',
+                            300: '#fde047',
+                            400: '#facc15',
+                            500: '#d4a017',
+                            600: '#b8860b',
+                            700: '#92700c',
+                            800: '#7a5f11',
+                            900: '#674e14',
+                        },
+                        cream: '#faf7f2',
+                        charcoal: '#22201e',
+                        warmgray: '#f5f0eb'
+                    },
+                    fontFamily: {
+                        arabic: ['Almarai', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                        calligraphy: ['Amiri', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body { font-family: 'Almarai', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-calligraphy { font-family: 'Amiri', serif; }
+        
+        /* Custom Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(196, 105, 62, 0.3); }
+            50% { box-shadow: 0 0 28px rgba(196, 105, 62, 0.6); }
+        }
+        .animate-fadeInUp { animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        
+        .hero-bg {
+            background: radial-gradient(circle at 85% 20%, rgba(243, 213, 196, 0.6) 0%, transparent 50%),
+                        radial-gradient(circle at 15% 80%, rgba(232, 181, 152, 0.4) 0%, transparent 45%),
+                        linear-gradient(135deg, #faf7f2 0%, #f9ece4 60%, #f5eee6 100%);
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(250, 247, 242, 0.88);
+            border-bottom: 1px solid rgba(212, 132, 90, 0.15);
+        }
+
+        .product-card {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            content-visibility: auto;
+            contain-intrinsic-size: 280px 420px;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -10px rgba(100, 52, 37, 0.12);
+        }
+        .product-card:hover .product-img {
+            transform: scale(1.06);
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #faf7f2; }
+        ::-webkit-scrollbar-thumb { background: #d4845a; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #c4693e; }
+        
+        .whatsapp-pulse {
+            animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+            70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+<body class="bg-cream text-charcoal antialiased" x-data="store()" x-init="init()" x-cloak>
+
+    <!-- ==================== TOP BANNER ==================== -->
+    <div class="bg-charcoal text-white text-xs py-2 px-4 text-center border-b border-brand-800/40">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <span class="hidden md:inline text-brand-300">✨ كل قطعة هاند ميد مصنوعة بحرفية يدوية وتطريز متقن</span>
+            <span class="mx-auto md:mx-0 font-medium">🎉 عرض الافتتاح لفترة محدودة: <strong class="text-amber-300 underline underline-offset-2">شحن مجاني</strong> لجميع محافظات مصر | الدفع عند الاستلام كاش</span>
+            <a href="https://wa.me/201131304107" target="_blank" class="hidden md:inline text-brand-300 hover:text-white transition-colors">
+                طلب واستفسار عبر الواتساب: ٠١١٣١٣٠٤١٠٧
+            </a>
+        </div>
+    </div>
+
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="sticky top-0 w-full z-50 transition-all duration-300"
+         :class="scrolled ? 'glass-nav shadow-sm py-2.5' : 'bg-cream/95 py-3.5 border-b border-brand-100'"
+         @scroll.window="scrolled = window.scrollY > 40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <!-- Brand Logo & Name -->
+                <a href="#home" class="flex items-center gap-3 group">
+                    <img src="logo.jpg" alt="تسبيحة - Tasbeha" class="h-11 w-11 object-contain rounded-full shadow-md border border-brand-200 group-hover:scale-105 transition-transform duration-300">
+                    <div>
+                        <div class="flex items-baseline gap-1.5">
+                            <h1 class="text-xl font-extrabold text-charcoal leading-none tracking-tight">تسبيحة</h1>
+                            <span class="text-xs text-brand-500 font-bold">هاند ميد</span>
+                        </div>
+                        <p class="text-[9px] text-brand-600 tracking-[0.25em] font-display font-semibold uppercase">TASBEHA FASHION</p>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-semibold hover:text-brand-500 transition-colors">الرئيسية</a>
+                    <a href="#products" class="text-sm font-semibold hover:text-brand-500 transition-colors">التشكيلات والمنتجات</a>
+                    <a href="#craft" class="text-sm font-semibold hover:text-brand-500 transition-colors">حرفتنا وفننا</a>
+                    <a href="#about" class="text-sm font-semibold hover:text-brand-500 transition-colors">عن تسبيحة</a>
+                    <a href="#contact" class="text-sm font-semibold hover:text-brand-500 transition-colors">تواصل معنا</a>
+                </div>
+                
+                <!-- Cart & Search Actions -->
+                <div class="flex items-center gap-3">
+                    <!-- Quick WhatsApp Direct -->
+                    <a href="https://wa.me/201131304107" target="_blank"
+                       class="hidden sm:inline-flex items-center gap-1.5 bg-green-500/10 text-green-700 hover:bg-green-500 hover:text-white px-3 py-1.5 rounded-full text-xs font-bold transition-all border border-green-500/30">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        واتساب
+                    </a>
+
+                    <!-- Cart Drawer Trigger -->
+                    <button @click="cartOpen = true" 
+                            class="relative p-2.5 bg-white hover:bg-brand-50 rounded-full border border-brand-200/80 shadow-sm transition-all hover:scale-105"
+                            aria-label="سلة التسوق">
+                        <svg class="w-5 h-5 text-charcoal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                        <span x-show="cartCount > 0" 
+                              x-text="cartCount"
+                              x-transition
+                              class="absolute -top-1 -right-1 bg-brand-500 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center shadow-md">
+                        </span>
+                    </button>
+                    
+                    <!-- Mobile Menu Hamburger -->
+                    <button @click="menuOpen = !menuOpen" class="md:hidden p-2 rounded-xl text-charcoal hover:bg-brand-50" aria-label="القائمة">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path x-show="!menuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                            <path x-show="menuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Dropdown -->
+            <div x-show="menuOpen" x-transition:enter="transition ease-out duration-200"
+                 x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+                 class="md:hidden mt-3 pt-3 pb-4 border-t border-brand-100 flex flex-col gap-2">
+                <a href="#home" @click="menuOpen = false" class="px-3 py-2 rounded-lg text-sm font-bold hover:bg-brand-50">الرئيسية</a>
+                <a href="#products" @click="menuOpen = false" class="px-3 py-2 rounded-lg text-sm font-bold hover:bg-brand-50">التشكيلات والمنتجات</a>
+                <a href="#craft" @click="menuOpen = false" class="px-3 py-2 rounded-lg text-sm font-bold hover:bg-brand-50">حرفتنا وفننا</a>
+                <a href="#about" @click="menuOpen = false" class="px-3 py-2 rounded-lg text-sm font-bold hover:bg-brand-50">عن تسبيحة</a>
+                <a href="#contact" @click="menuOpen = false" class="px-3 py-2 rounded-lg text-sm font-bold hover:bg-brand-50">تواصل معنا</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="relative hero-bg overflow-hidden pt-12 pb-24 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text Column -->
+                <div class="md:col-span-7 animate-fadeInUp">
+                    <div class="inline-flex items-center gap-2 bg-brand-100/90 text-brand-800 px-4 py-1.5 rounded-full text-xs font-bold mb-6 border border-brand-200/60">
+                        <span class="w-2 h-2 rounded-full bg-brand-500 animate-ping"></span>
+                        براند هاند ميد مصري أصيل ١٠٠٪
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-charcoal leading-[1.15] mb-6 tracking-tight">
+                        أزياء تفيض بالإبداع،<br>
+                        <span class="text-brand-500 font-calligraphy font-normal italic">كل قطعة لوحة فنية</span><br>
+                        مرسومة ومطرزة بحب
+                    </h1>
+                    
+                    <p class="text-base sm:text-lg text-gray-700 leading-relaxed mb-8 max-w-xl">
+                        في <strong class="text-charcoal font-bold">تسبيحة</strong>، نُحول الأقمشة إلى أعمال فنية فريدة. فساتين مرسومة يدوياً بألوان زاهية ثابتة، عبايات مبتكرة بتطريزات وسلاسل فنية، وإسكارفات مطرزة بالأحجار الكريمة.
+                    </p>
+                    
+                    <div class="flex flex-wrap items-center gap-4 mb-10">
+                        <a href="#products" class="bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-full font-bold shadow-lg shadow-brand-500/25 transition-all hover:-translate-y-0.5 flex items-center gap-2">
+                            <span>تسوقي التشكيلة الآن</span>
+                            <svg class="w-5 h-5 rtl:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </a>
+                        
+                        <a href="#about" class="bg-white hover:bg-brand-50 text-charcoal px-7 py-4 rounded-full font-bold border border-brand-200 transition-all shadow-sm">
+                            تعرفي على قصتنا
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Badges -->
+                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-brand-200/80 max-w-lg">
+                        <div>
+                            <p class="text-2xl font-black text-brand-500">١٠٠٪</p>
+                            <p class="text-xs text-gray-600 font-medium mt-0.5">شغل يدوي فريد</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-brand-500">٦٥+</p>
+                            <p class="text-xs text-gray-600 font-medium mt-0.5">تصميم حصري</p>
+                        </div>
+                        <div>
+                            <p class="text-2xl font-black text-brand-500">كاش</p>
+                            <p class="text-xs text-gray-600 font-medium mt-0.5">دفع عند الاستلام</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual Collage -->
+                <div class="md:col-span-5 relative">
+                    <div class="relative mx-auto max-w-md">
+                        <!-- Main Card -->
+                        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-white aspect-[3/4] relative group">
+                            <img src="products/product-57.jpg" alt="فستان هاند ميد تسبيحة" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-5 right-5 left-5 text-white">
+                                <span class="bg-brand-500 text-white text-[11px] font-bold px-3 py-1 rounded-full inline-block mb-2">أيقونة تسبيحة</span>
+                                <h3 class="text-xl font-bold">فستان الديك الشعبي الملون</h3>
+                                <p class="text-xs text-white/80">رسم يدوي دقيق على قماش قطني فاخر</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating badge 1 -->
+                        <div class="absolute -top-4 -right-4 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-brand-100 flex items-center gap-3">
+                            <img src="logo.jpg" alt="" class="w-10 h-10 rounded-full border border-brand-200 object-cover">
+                            <div>
+                                <p class="text-xs font-bold text-charcoal">إصدارات محدودة</p>
+                                <p class="text-[10px] text-gray-500">كل قطعة مفيش زيها تانية</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating badge 2 -->
+                        <div class="absolute -bottom-6 -left-4 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-brand-100">
+                            <div class="flex items-center gap-2">
+                                <span class="text-amber-500 text-sm">★★★★★</span>
+                                <span class="text-xs font-bold text-charcoal">تقييم عالي</span>
+                            </div>
+                            <p class="text-[11px] text-gray-500 mt-1">خامات وألوان ثابتة ومضمونة</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== HIGHLIGHT CATEGORIES ==================== -->
+    <section class="py-16 bg-white border-y border-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12 reveal">
+                <p class="text-brand-500 font-bold text-sm tracking-widest uppercase mb-1">تشكيلاتنا الفنية</p>
+                <h2 class="text-3xl font-extrabold text-charcoal">تسوقي حسب التصنيف المفضل</h2>
+                <p class="text-gray-500 text-sm mt-2">اختاري من بين الفساتين المرسومة، العبايات الراقية، والإكسسوارات المصنوعة يدوياً</p>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Dresses -->
+                <div @click="filterCategory('dresses')" 
+                     class="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="products/product-03.jpg" alt="فساتين مرسومة" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 right-4 left-4 text-white">
+                        <span class="text-[10px] uppercase tracking-wider text-brand-300 font-bold">هاند ميد</span>
+                        <h3 class="text-lg font-bold">فساتين مرسومة</h3>
+                        <p class="text-xs text-white/75 mt-0.5">تصاميم فلكلورية ومبهجة</p>
+                    </div>
+                </div>
+
+                <!-- Abayas -->
+                <div @click="filterCategory('abayas')" 
+                     class="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="products/product-17.jpg" alt="عبايات فنية" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 right-4 left-4 text-white">
+                        <span class="text-[10px] uppercase tracking-wider text-brand-300 font-bold">أناقة خاصة</span>
+                        <h3 class="text-lg font-bold">عبايات فنية</h3>
+                        <p class="text-xs text-white/75 mt-0.5">سلاسل وتطريزات معاصرة</p>
+                    </div>
+                </div>
+
+                <!-- Scarves -->
+                <div @click="filterCategory('scarves')" 
+                     class="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="products/product-56.jpg" alt="إسكارفات مطرزة" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 right-4 left-4 text-white">
+                        <span class="text-[10px] uppercase tracking-wider text-brand-300 font-bold">أحجار وتطريز</span>
+                        <h3 class="text-lg font-bold">إسكارفات مطرزة</h3>
+                        <p class="text-xs text-white/75 mt-0.5">لمسات راقية لكل إطلالة</p>
+                    </div>
+                </div>
+
+                <!-- Accessories -->
+                <div @click="filterCategory('accessories')" 
+                     class="group relative rounded-2xl overflow-hidden aspect-[4/5] cursor-pointer shadow-md hover:shadow-xl transition-all duration-300">
+                    <img src="products/product-04.jpg" alt="إكسسوارات وهاند ميد" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-4 right-4 left-4 text-white">
+                        <span class="text-[10px] uppercase tracking-wider text-brand-300 font-bold">تفاصيل تكمل جمالك</span>
+                        <h3 class="text-lg font-bold">إكسسوارات وحقائب</h3>
+                        <p class="text-xs text-white/75 mt-0.5">قطع فنية يدوية أنيقة</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRODUCTS CATALOG SECTION ==================== -->
+    <section id="products" class="py-20 bg-cream">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header & Controls -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div>
+                    <span class="text-brand-500 font-bold text-xs tracking-wider uppercase">المتجر الفني</span>
+                    <h2 class="text-3xl font-extrabold text-charcoal mt-1">تشكيلة تسبيحة المختارة</h2>
+                    <p class="text-gray-600 text-sm mt-1">تصفحي القطع، اختاري مقاسك، واطلبيها مباشرة بكل سهولة</p>
+                </div>
+                
+                <!-- Search & Filters Container -->
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                    <!-- Search Input -->
+                    <div class="relative w-full sm:w-64">
+                        <input type="text" x-model="searchQuery" placeholder="ابحثي عن فستان، عباية..."
+                               class="w-full pl-9 pr-4 py-2.5 text-sm bg-white border border-brand-200 rounded-full focus:outline-none focus:ring-2 focus:ring-brand-500 shadow-sm transition-all">
+                        <svg class="w-4 h-4 text-gray-400 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+
+                    <!-- Category Pills -->
+                    <div class="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0">
+                        <button @click="filterCategory('all')"
+                                class="px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap"
+                                :class="activeCategory === 'all' ? 'bg-brand-500 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-brand-50 border border-brand-100'">
+                            الكل
+                        </button>
+                        <button @click="filterCategory('dresses')"
+                                class="px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap"
+                                :class="activeCategory === 'dresses' ? 'bg-brand-500 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-brand-50 border border-brand-100'">
+                            فساتين
+                        </button>
+                        <button @click="filterCategory('abayas')"
+                                class="px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap"
+                                :class="activeCategory === 'abayas' ? 'bg-brand-500 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-brand-50 border border-brand-100'">
+                            عبايات
+                        </button>
+                        <button @click="filterCategory('scarves')"
+                                class="px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap"
+                                :class="activeCategory === 'scarves' ? 'bg-brand-500 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-brand-50 border border-brand-100'">
+                            إسكارفات
+                        </button>
+                        <button @click="filterCategory('accessories')"
+                                class="px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap"
+                                :class="activeCategory === 'accessories' ? 'bg-brand-500 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-brand-50 border border-brand-100'">
+                            إكسسوارات
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty Search State -->
+            <div x-show="filteredProducts.length === 0" class="text-center py-16 bg-white rounded-3xl border border-brand-100">
+                <div class="w-16 h-16 bg-brand-50 text-brand-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">؟</div>
+                <h3 class="text-lg font-bold text-charcoal">لا توجد منتجات مطابقة للبحث</h3>
+                <p class="text-gray-500 text-sm mt-1">جربي كلمات بحث أخرى أو اختاري تصنيفاً مختلفاً</p>
+                <button @click="searchQuery = ''; activeCategory = 'all'" class="mt-4 px-5 py-2 bg-brand-500 text-white rounded-full text-xs font-bold hover:bg-brand-600 transition-colors">
+                    عرض جميع المنتجات
+                </button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                <template x-for="product in displayedProducts" :key="product.id">
+                    <div class="product-card group bg-white rounded-2xl overflow-hidden border border-brand-100/80 shadow-sm flex flex-col cursor-pointer"
+                         @click="openProduct(product)">
+                        
+                        <!-- Image Container with Aspect Ratio -->
+                        <div class="relative overflow-hidden aspect-[3/4] bg-warmgray">
+                            <img :src="product.image" :alt="product.name" 
+                                 class="product-img w-full h-full object-cover transition-transform duration-700"
+                                 loading="lazy">
+                            
+                            <!-- Overlay on hover -->
+                            <div class="absolute inset-0 bg-charcoal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="bg-white/95 text-charcoal font-bold text-xs px-4 py-2 rounded-full shadow-lg transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
+                                    معاينة القطعة 👁️
+                                </span>
+                            </div>
+                            
+                            <!-- Badges -->
+                            <div class="absolute top-3 right-3 flex flex-col gap-1.5">
+                                <span x-show="product.badge" class="bg-brand-500 text-white text-[10px] font-extrabold px-2.5 py-0.5 rounded-full shadow-sm" x-text="product.badge"></span>
+                                <span x-show="product.isHandmade" class="bg-charcoal/80 text-white text-[9px] font-medium px-2 py-0.5 rounded-full backdrop-blur-sm">يدوي</span>
+                            </div>
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="p-4 flex-1 flex flex-col justify-between">
+                            <div>
+                                <span class="text-[11px] text-brand-600 font-bold block mb-1" x-text="product.category_ar"></span>
+                                <h3 class="font-bold text-sm text-charcoal leading-snug line-clamp-1 group-hover:text-brand-500 transition-colors" x-text="product.name"></h3>
+                                <p class="text-xs text-gray-500 mt-1 line-clamp-2" x-text="product.description"></p>
+                            </div>
+                            
+                            <div class="mt-4 pt-3 border-t border-brand-50 flex items-center justify-between">
+                                <div>
+                                    <span class="text-xs text-gray-400 block -mb-0.5">السعر</span>
+                                    <span class="text-base font-extrabold text-brand-600" x-text="product.price + ' ج.م'"></span>
+                                </div>
+                                
+                                <div class="flex items-center gap-1.5">
+                                    <button @click.stop="quickWhatsApp(product)"
+                                            class="w-9 h-9 bg-green-50 hover:bg-green-500 text-green-600 hover:text-white rounded-full flex items-center justify-center transition-colors shadow-sm"
+                                            title="طلب فوري عبر واتساب">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                    </button>
+                                    
+                                    <button @click.stop="addToCart(product)"
+                                            class="w-9 h-9 bg-brand-50 hover:bg-brand-500 text-brand-600 hover:text-white rounded-full flex items-center justify-center transition-colors shadow-sm"
+                                            title="إضافة للسلة">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </template>
+            </div>
+
+            <!-- ==================== LOAD MORE BUTTON ==================== -->
+            <div x-show="displayLimit < filteredProducts.length" class="text-center mt-12 mb-4">
+                <button @click="displayLimit += 12" 
+                        class="inline-flex items-center gap-3 px-8 py-3.5 bg-white hover:bg-brand-50 text-brand-700 border-2 border-brand-400/80 hover:border-brand-500 font-extrabold text-sm rounded-full shadow-md hover:shadow-lg transition-all duration-300 transform active:scale-95 group">
+                    <span>عرض المزيد من الموديلات والقطع الفنية</span>
+                    <span class="text-xs bg-brand-500 text-white font-bold px-3 py-1 rounded-full group-hover:bg-brand-600 transition-colors"
+                          x-text="'+' + (filteredProducts.length - displayLimit) + ' قطعة'"></span>
+                    <svg class="w-4 h-4 rtl:rotate-180 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ==================== ART & CRAFTSMANSHIP STORY ==================== -->
+    <section id="craft" class="py-20 bg-charcoal text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                
+                <div class="reveal">
+                    <span class="text-brand-400 font-bold text-xs tracking-widest uppercase">فن الهاند ميد</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 mb-6 leading-tight">
+                        لماذا كل قطعة من <span class="text-brand-300">تسبيحة</span> هي تحفة فنية لا تتكرر؟
+                    </h2>
+                    
+                    <div class="space-y-5 text-gray-300 text-sm leading-relaxed">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 text-lg">🎨</div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">رسم يدوي دقيق بالفرشاة</h3>
+                                <p class="text-gray-400 mt-1">كل رسمة يتم تخطيطها وتلوينها يدوياً بواسطة فنانين متخصصين، باستخدام ألوان قماش إيطالية خاصة لا تبهت مع الغسيل المتكرر.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 text-lg">💎</div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">تطريز يدوي بأحجار كريمة وكريستال</h3>
+                                <p class="text-gray-400 mt-1">إسكارفاتنا وعباياتنا تُطرز يدوياً بحبات الأحجار والكريستال اللامع لتمنحك حضوراً فاخراً وأنيقاً في كل مناسبة.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-500/20 text-brand-400 flex items-center justify-center shrink-0 text-lg">✨</div>
+                            <div>
+                                <h3 class="font-bold text-white text-base">إصدارات محدودة وحصرية</h3>
+                                <p class="text-gray-400 mt-1">نحن لا ننتج كميات تجارية مكررة، بل قطعاً مميزة ومعدودة لتكوني دائماً متفردة بين الجميع.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <img src="products/product-01.jpg" alt="" class="rounded-2xl shadow-lg w-full h-56 object-cover border border-gray-700">
+                            <img src="products/product-03.jpg" alt="" class="rounded-2xl shadow-lg w-full h-72 object-cover border border-gray-700">
+                        </div>
+                        <div class="space-y-4 pt-6">
+                            <img src="products/product-06.jpg" alt="" class="rounded-2xl shadow-lg w-full h-72 object-cover border border-gray-700">
+                            <img src="products/product-10.jpg" alt="" class="rounded-2xl shadow-lg w-full h-56 object-cover border border-gray-700">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT TASBEHA ==================== -->
+    <section id="about" class="py-20 bg-warmgray/60">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-12 gap-12 items-center">
+                
+                <div class="md:col-span-5 reveal">
+                    <div class="relative">
+                        <img src="products/product-31.jpg" alt="براند تسبيحة" class="rounded-3xl shadow-xl w-full h-[450px] object-cover border-4 border-white">
+                        <div class="absolute -bottom-6 -right-6 bg-brand-500 text-white p-5 rounded-2xl shadow-lg text-center">
+                            <span class="block text-3xl font-black">١٠٠٪</span>
+                            <span class="text-xs font-bold text-brand-100">صنع في مصر</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-7 reveal">
+                    <span class="text-brand-500 font-bold text-xs tracking-widest uppercase">حكايتنا</span>
+                    <h2 class="text-3xl font-extrabold text-charcoal mt-1 mb-4">تسبيحة — حين تصبح الأزياء لوحة تعبر عنكِ</h2>
+                    
+                    <p class="text-gray-600 leading-relaxed text-sm mb-4">
+                        انطلقت فكرة <strong class="text-charcoal font-bold">تسبيحة</strong> من شغف عميق بالتراث المصري الأصيل والفن التشكيلي المعاصر. أردنا أن نقدم بديلاً حقيقياً للملابس التجارية المكررة، عبر قطع هاند ميد فريدة تنبض بالألوان والحياة.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-sm mb-6">
+                        كل تصميم نبتكره يحمل في طياته ساعات طويلة من العمل اليدوي المتقن؛ من اختيار أنقى خامات القطن والكتان والكريب، إلى رسم الخطوط بالفرشاة وغزل السلاسل وتطريز الأحجار الكريمة، لتصل إليكِ قطعة فنية تليق بذوقك الرفيع.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-4 border-t border-brand-200/60 pt-6">
+                        <div class="bg-white p-4 rounded-xl border border-brand-100 text-center">
+                            <span class="text-2xl block mb-1">🧵</span>
+                            <p class="text-xs font-bold text-charcoal">تطريز أصيل</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-brand-100 text-center">
+                            <span class="text-2xl block mb-1">🖌️</span>
+                            <p class="text-xs font-bold text-charcoal">ألوان ثابتة</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-xl border border-brand-100 text-center">
+                            <span class="text-2xl block mb-1">📦</span>
+                            <p class="text-xs font-bold text-charcoal">تغليف هدايا فاخر</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CUSTOMER TESTIMONIALS ==================== -->
+    <section class="py-16 bg-white border-t border-brand-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <span class="text-brand-500 font-bold text-xs tracking-widest uppercase">آراء عميلاتنا</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-charcoal mt-1">تجارب حقيقية تسعدنا دائماً</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-cream p-6 rounded-2xl border border-brand-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-gray-700 text-sm leading-relaxed">"الفستان تحفة فنية بجد! الألوان في الطبيعة أحلى بكتير من الصور، والرسمة غسلتها مرتين وثابتة وممتازة جداً. فخورة إن في براند مصري بالجودة دي."</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-brand-200/60 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-brand-200 text-brand-800 font-bold flex items-center justify-center text-xs">س</div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal">سارة مجدي</p>
+                            <p class="text-[10px] text-gray-500">القاهرة - فستان الديك الملون</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl border border-brand-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-gray-700 text-sm leading-relaxed">"العباية السلاسل مبهجة وشيك جداً في اللبس، كل الناس سألتني عليها في مناسبة عائلية. التوصيل كان سريع والمعاملة في منتهى الذوق والاحترافية."</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-brand-200/60 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-brand-200 text-brand-800 font-bold flex items-center justify-center text-xs">م</div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal">مريم الشافعي</p>
+                            <p class="text-[10px] text-gray-500">الإسكندرية - عباية سلاسل فنية</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-cream p-6 rounded-2xl border border-brand-100 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="text-amber-400 text-sm mb-3">★★★★★</div>
+                        <p class="text-gray-700 text-sm leading-relaxed">"الإسكارف المطرز بالأحجار تحفة ومثالي كهدية مميزة. التطريز اليدوي متقن جداً والتغليف فخم وراقي. أكيد هطلب تاني وتالت من تسبيحة."</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-brand-200/60 flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-full bg-brand-200 text-brand-800 font-bold flex items-center justify-center text-xs">ن</div>
+                        <div>
+                            <p class="text-xs font-bold text-charcoal">نورهان فوزي</p>
+                            <p class="text-[10px] text-gray-500">المنصورة - إسكارف مطرز بالأحجار</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT & ORDER INQUIRY ==================== -->
+    <section id="contact" class="py-20 bg-cream">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-brand-500 font-bold text-xs tracking-widest uppercase">خدمة العملاء</span>
+                <h2 class="text-3xl font-extrabold text-charcoal mt-1">تواصلي معنا أو اطلبي تصميماً خاصاً</h2>
+                <p class="text-gray-600 text-sm mt-2">لديكِ استفسار عن المقاسات أو ترغبين في تفصيل قطعة خاصة بكِ؟ فريق تسبيحة يسعد بمساعدتك دائماً.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 sm:p-10 border border-brand-100 shadow-xl">
+                <form @submit.prevent="submitContact()" class="space-y-5">
+                    <div class="grid sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1.5">الاسم الكريم *</label>
+                            <input type="text" x-model="contactForm.name" required placeholder="مثال: ياسمين أحمد"
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition-all">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1.5">رقم الهاتف أو الواتساب *</label>
+                            <input type="tel" x-model="contactForm.phone" required placeholder="01xxxxxxxxx"
+                                   class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition-all text-left">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-700 mb-1.5">رسالتك أو تفاصيل الطلب *</label>
+                        <textarea x-model="contactForm.message" required rows="4" placeholder="اكتبي استفسارك، المقاس المطلوب، أو أي تفاصيل خاصة..."
+                                  class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition-all resize-none"></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-2">
+                        <button type="submit" 
+                                class="w-full sm:w-auto flex-1 bg-brand-500 hover:bg-brand-600 text-white font-bold py-3.5 px-8 rounded-xl shadow-md transition-all">
+                            إرسال الرسالة الآن ✨
+                        </button>
+
+                        <a href="https://wa.me/201131304107" target="_blank"
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-sm text-sm">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            مراسلة فورية عبر واتساب
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-charcoal text-white pt-16 pb-12 border-t border-brand-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-gray-800">
+                
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="logo.jpg" alt="تسبيحة" class="h-12 w-12 object-contain rounded-full border border-brand-400/40">
+                        <div>
+                            <h3 class="text-xl font-bold tracking-wide">تسبيحة</h3>
+                            <p class="text-[9px] text-brand-300 tracking-[0.25em] font-display font-semibold uppercase">TASBEHA HANDMADE</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm mb-6">
+                        براند أزياء هاند ميد مصري يجمع بين فن الرسم اليدوي والتطريز الفاخر. نصنع كل قطعة بشغف لتكون لوحتك الخاصة.
+                    </p>
+                    <div class="flex items-center gap-3 text-xs text-brand-200">
+                        <span class="bg-gray-800 px-3 py-1 rounded-full">🇪🇬 صنع بأيدي مصرية</span>
+                        <span class="bg-gray-800 px-3 py-1 rounded-full">✨ رسم يدوي ١٠٠٪</span>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3">
+                    <h4 class="font-bold text-sm text-brand-300 mb-4">روابط سريعة</h4>
+                    <ul class="space-y-2.5 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition-colors">الرئيسية</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">جميع المنتجات والتشكيلات</a></li>
+                        <li><a href="#craft" class="hover:text-white transition-colors">كواليس الحرفة والرسم</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">عن براند تسبيحة</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">تواصل وطلب تفصيل خاص</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4">
+                    <h4 class="font-bold text-sm text-brand-300 mb-4">معلومات وتواصل</h4>
+                    <div class="space-y-3 text-sm text-gray-400">
+                        <p class="flex items-center gap-2.5">
+                            <span class="text-brand-400">📱</span>
+                            <span class="dir-ltr text-right">٠١١٣١٣٠٤١٠٧</span>
+                        </p>
+                        <p class="flex items-center gap-2.5">
+                            <span class="text-brand-400">📍</span>
+                            <span>جمهورية مصر العربية — شحن لكافة المحافظات</span>
+                        </p>
+                        <p class="flex items-center gap-2.5">
+                            <span class="text-brand-400">💵</span>
+                            <span>الدفع عند الاستلام بعد معاينة المنتج</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>© ٢٠٢٦ براند تسبيحة (Tasbeha). جميع الحقوق محفوظة.</p>
+                <p>صُنع بكل إتقان ومحبة في مصر ❤️</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== PRODUCT DETAILS MODAL ==================== -->
+    <div x-show="productModal" x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-[60] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+         @click.self="productModal = false">
+        
+        <div x-show="productModal" x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+             class="bg-white rounded-3xl max-w-3xl w-full max-h-[92vh] overflow-y-auto shadow-2xl relative">
+            
+            <button @click="productModal = false" class="absolute top-4 left-4 z-10 w-9 h-9 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-md text-charcoal transition-colors">
+                ✕
+            </button>
+
+            <template x-if="selectedProduct">
+                <div class="grid md:grid-cols-2">
+                    <!-- Modal Image -->
+                    <div class="relative bg-warmgray aspect-[3/4] md:aspect-auto h-full min-h-[350px]">
+                        <img :src="selectedProduct.image" :alt="selectedProduct.name" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-brand-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow" x-text="selectedProduct.category_ar"></span>
+                        </div>
+                    </div>
+
+                    <!-- Modal Details -->
+                    <div class="p-6 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <span class="text-xs text-brand-600 font-bold uppercase tracking-wider block mb-1">تسبيحة هاند ميد</span>
+                            <h2 class="text-2xl font-extrabold text-charcoal mb-2" x-text="selectedProduct.name"></h2>
+                            
+                            <div class="flex items-baseline gap-2 mb-4">
+                                <span class="text-3xl font-black text-brand-600" x-text="selectedProduct.price + ' ج.م'"></span>
+                                <span class="text-xs text-gray-400">شامل المعاينة والدفع عند الاستلام</span>
+                            </div>
+
+                            <p class="text-gray-600 text-sm leading-relaxed mb-6" x-text="selectedProduct.description"></p>
+
+                            <!-- Size Selector & Custom Tailoring Option -->
+                            <div x-show="selectedProduct.sizes && selectedProduct.sizes.length > 0" class="mb-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <p class="text-xs font-bold text-gray-700">اختاري المقاس:</p>
+                                    <button type="button" @click="isCustomSize = !isCustomSize; if(isCustomSize) selectedSize = 'تفصيل خاص'"
+                                            class="text-[11px] font-bold text-brand-600 hover:text-brand-700 underline flex items-center gap-1">
+                                        <span>✂️ طلب تفصيل بمقاسات خاصة</span>
+                                    </button>
+                                </div>
+                                
+                                <div x-show="!isCustomSize" class="flex items-center gap-2">
+                                    <template x-for="size in (selectedProduct.sizes || [])" :key="size">
+                                        <button @click="selectedSize = size"
+                                                class="w-12 h-10 rounded-xl font-bold text-xs border transition-all flex items-center justify-center"
+                                                :class="selectedSize === size ? 'bg-brand-500 text-white border-brand-500 shadow-sm' : 'bg-white text-charcoal border-gray-200 hover:border-brand-300'"
+                                                x-text="size">
+                                        </button>
+                                    </template>
+                                </div>
+
+                                <div x-show="isCustomSize" x-transition class="bg-brand-50/70 p-3 rounded-xl border border-brand-200 text-xs space-y-2 mt-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-bold text-brand-800">تفصيل بمقاساتك الخاصة (بدون تكلفة إضافية)</span>
+                                        <button type="button" @click="isCustomSize = false; selectedSize = selectedProduct.sizes[0]" class="text-gray-400 hover:text-charcoal text-[10px]">الرجوع للمقاسات الجاهزة</button>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-2">
+                                        <div>
+                                            <label class="block text-[10px] text-gray-600 mb-0.5">الطول المطلوب (سم)</label>
+                                            <input type="text" x-model="customMeasurements.height" placeholder="مثال: 140 سم" class="w-full px-2.5 py-1.5 rounded-lg border border-brand-200 bg-white text-xs outline-none">
+                                        </div>
+                                        <div>
+                                            <label class="block text-[10px] text-gray-600 mb-0.5">محيط الصدر / العرض</label>
+                                            <input type="text" x-model="customMeasurements.chest" placeholder="مثال: 105 سم" class="w-full px-2.5 py-1.5 rounded-lg border border-brand-200 bg-white text-xs outline-none">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] text-gray-600 mb-0.5">ملاحظات التفصيل الخاصة</label>
+                                        <input type="text" x-model="customMeasurements.notes" placeholder="أي تفاصيل خاصة بالأكمام أو القصة..." class="w-full px-2.5 py-1.5 rounded-lg border border-brand-200 bg-white text-xs outline-none">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Quantity Selector -->
+                            <div class="mb-6">
+                                <p class="text-xs font-bold text-gray-700 mb-2">الكمية:</p>
+                                <div class="inline-flex items-center border border-gray-200 rounded-xl bg-warmgray/50 p-1">
+                                    <button @click="if(modalQty > 1) modalQty--" class="w-8 h-8 rounded-lg bg-white flex items-center justify-center font-bold text-gray-600 hover:bg-brand-50 transition-colors">−</button>
+                                    <span class="w-10 text-center font-bold text-sm text-charcoal" x-text="modalQty"></span>
+                                    <button @click="modalQty++" class="w-8 h-8 rounded-lg bg-white flex items-center justify-center font-bold text-gray-600 hover:bg-brand-50 transition-colors">+</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="space-y-2.5 pt-4 border-t border-gray-100">
+                            <!-- Add to Cart -->
+                            <button @click="addToCartFromModal()" 
+                                    class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                                إضافة لسلة المشتريات
+                            </button>
+
+                            <!-- Direct WhatsApp Order -->
+                            <a :href="directWhatsAppLink" target="_blank"
+                               class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-3 rounded-xl font-bold text-xs transition-all flex items-center justify-center gap-2 shadow-sm">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                طلب مباشر سريع عبر واتساب
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <!-- ==================== CART DRAWER ==================== -->
+    <div x-show="cartOpen" x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+         class="fixed inset-0 z-[70] bg-black/60 backdrop-blur-sm" @click.self="cartOpen = false">
+        
+        <div x-show="cartOpen" x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full"
+             class="absolute top-0 left-0 h-full w-full max-w-md bg-white shadow-2xl flex flex-col">
+            
+            <!-- Drawer Header -->
+            <div class="flex items-center justify-between p-5 border-b border-gray-100">
+                <div class="flex items-center gap-2">
+                    <h3 class="text-lg font-extrabold text-charcoal">سلة المشتريات</h3>
+                    <span class="bg-brand-100 text-brand-700 text-xs font-bold px-2.5 py-0.5 rounded-full" x-text="cartCount"></span>
+                </div>
+                <button @click="cartOpen = false" class="w-8 h-8 rounded-full hover:bg-gray-100 flex items-center justify-center text-gray-500">
+                    ✕
+                </button>
+            </div>
+            
+            <!-- Drawer Items Content -->
+            <div class="flex-1 overflow-y-auto p-5">
+                <template x-if="cart.length === 0">
+                    <div class="text-center py-20">
+                        <div class="w-16 h-16 bg-brand-50 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">🛍️</div>
+                        <p class="font-bold text-gray-700">السلة فارغة حالياً</p>
+                        <p class="text-xs text-gray-400 mt-1">تصفحي تشكيلتنا وأضيفي القطع المفضلة لكِ</p>
+                    </div>
+                </template>
+                
+                <div class="space-y-3.5">
+                    <template x-for="(item, index) in cart" :key="item.id + (item.size || '')">
+                        <div class="flex gap-3 bg-warmgray/40 rounded-2xl p-3 border border-brand-100/60 items-center">
+                            <img :src="item.image" :alt="item.name" class="w-16 h-20 object-cover rounded-xl shrink-0">
+                            <div class="flex-1 min-w-0">
+                                <h4 class="font-bold text-xs text-charcoal truncate" x-text="item.name"></h4>
+                                <span x-show="item.size" class="text-[10px] text-brand-600 bg-brand-50 px-2 py-0.5 rounded font-bold" x-text="'مقاس: ' + item.size"></span>
+                                <p class="text-brand-600 font-extrabold text-xs mt-1" x-text="item.price + ' ج.م'"></p>
+                                
+                                <div class="flex items-center justify-between mt-2">
+                                    <div class="flex items-center gap-1.5 bg-white border border-gray-200 rounded-lg p-0.5">
+                                        <button @click="updateQty(index, -1)" class="w-6 h-6 rounded flex items-center justify-center text-xs font-bold hover:bg-gray-100">−</button>
+                                        <span class="w-6 text-center text-xs font-bold" x-text="item.qty"></span>
+                                        <button @click="updateQty(index, 1)" class="w-6 h-6 rounded flex items-center justify-center text-xs font-bold hover:bg-gray-100">+</button>
+                                    </div>
+                                    <button @click="removeFromCart(index)" class="text-red-400 hover:text-red-600 text-xs p-1" title="حذف">
+                                        🗑️
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            
+            <!-- Drawer Footer Summary -->
+            <div x-show="cart.length > 0" class="border-t border-gray-100 p-5 bg-warmgray/30 space-y-3">
+                <div class="space-y-1.5 text-xs text-gray-600 pb-2 border-b border-gray-200/60">
+                    <div class="flex justify-between">
+                        <span>المجموع الفرعي:</span>
+                        <span class="font-bold text-charcoal" x-text="cartTotal + ' ج.م'"></span>
+                    </div>
+                    <div class="flex justify-between text-emerald-700 font-bold">
+                        <span>🚚 رسوم التوصيل:</span>
+                        <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-[10px]">مجاني (عرض الافتتاح 🎉)</span>
+                    </div>
+                </div>
+                <div class="flex justify-between items-baseline">
+                    <span class="text-sm font-bold text-gray-600">إجمالي المشتريات:</span>
+                    <span class="text-2xl font-black text-brand-600" x-text="cartTotal + ' ج.م'"></span>
+                </div>
+                <button @click="cartOpen = false; checkoutOpen = true" 
+                        class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all">
+                    متابعة إتمام الطلب 🛍️
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== COMPLETE CHECKOUT MODAL ==================== -->
+    <div x-show="checkoutOpen" x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+         class="fixed inset-0 z-[80] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4"
+         @click.self="checkoutOpen = false">
+        
+        <div x-show="checkoutOpen" x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+             class="bg-white rounded-3xl max-w-lg w-full max-h-[92vh] overflow-y-auto p-6 sm:p-8 shadow-2xl">
+            
+            <template x-if="!orderComplete">
+                <div>
+                    <div class="flex items-center justify-between mb-5">
+                        <h2 class="text-2xl font-extrabold text-charcoal">بيانات التوصيل والطلب</h2>
+                        <button @click="checkoutOpen = false" class="text-gray-400 hover:text-charcoal text-lg">✕</button>
+                    </div>
+
+                    <!-- Mini Cart Summary -->
+                    <div class="bg-warmgray/50 rounded-2xl p-4 mb-5 border border-brand-100/70">
+                        <div class="flex items-center justify-between text-xs font-bold text-gray-600 mb-2">
+                            <span>القطع المختارة:</span>
+                            <span class="text-brand-600" x-text="cartCount + ' قطعة'"></span>
+                        </div>
+                        <template x-for="item in cart" :key="item.id + (item.size || '')">
+                            <div class="flex justify-between text-xs py-1 text-gray-700">
+                                <span class="truncate max-w-[200px]" x-text="item.name + (item.size ? ' ('+item.size+')' : '') + ' × ' + item.qty"></span>
+                                <span class="font-bold" x-text="(item.price * item.qty) + ' ج.م'"></span>
+                            </div>
+                        </template>
+                        <div class="border-t border-brand-200/60 mt-2.5 pt-2 space-y-1">
+                            <div class="flex justify-between text-xs text-gray-600">
+                                <span>مجموع القطع:</span>
+                                <span class="font-bold text-charcoal" x-text="cartTotal + ' ج.م'"></span>
+                            </div>
+                            <div class="flex justify-between text-xs text-emerald-700 font-bold">
+                                <span>الشحن لكافة المحافظات:</span>
+                                <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded-full text-[10px]">مجاناً (عرض الافتتاح 🎉)</span>
+                            </div>
+                            <div class="flex justify-between items-baseline font-bold pt-1.5 border-t border-dashed border-brand-200">
+                                <span class="text-sm text-charcoal">الإجمالي المطلوب سداده:</span>
+                                <span class="text-lg text-brand-600 font-black" x-text="cartTotal + ' ج.م'"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Form -->
+                    <form @submit.prevent="placeOrder()" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">الاسم بالكامل *</label>
+                            <input type="text" x-model="checkout.name" required placeholder="اسم المستلم"
+                                   class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">رقم الموبايل للتواصل *</label>
+                            <input type="tel" x-model="checkout.phone" required placeholder="01xxxxxxxxx"
+                                   class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition-all text-left">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">المحافظة *</label>
+                            <select x-model="checkout.city" required
+                                    class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition-all">
+                                <option value="">اختاري المحافظة</option>
+                                <option>القاهرة</option>
+                                <option>الجيزة</option>
+                                <option>الإسكندرية</option>
+                                <option>الدقهلية (المنصورة)</option>
+                                <option>الغربية (طنطا)</option>
+                                <option>الشرقية (الزقازيق)</option>
+                                <option>القليوبية</option>
+                                <option>المنوفية</option>
+                                <option>البحيرة</option>
+                                <option>دمياط</option>
+                                <option>كفر الشيخ</option>
+                                <option>بورسعيد</option>
+                                <option>الإسماعيلية</option>
+                                <option>السويس</option>
+                                <option>الفيوم</option>
+                                <option>بني سويف</option>
+                                <option>المنيا</option>
+                                <option>أسيوط</option>
+                                <option>سوهاج</option>
+                                <option>قنا</option>
+                                <option>الأقصر</option>
+                                <option>أسوان</option>
+                                <option>البحر الأحمر</option>
+                                <option>جنوب سيناء</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">العنوان بالتفصيل *</label>
+                            <input type="text" x-model="checkout.address" required placeholder="المنطقة - الشارع - رقم العقار - الشقة"
+                                   class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition-all">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-700 mb-1">ملاحظات إضافية (اختياري)</label>
+                            <input type="text" x-model="checkout.notes" placeholder="مواعيد التوصيل المفضلة أو تفاصيل المقاس"
+                                   class="w-full px-3.5 py-2.5 rounded-xl border border-gray-200 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 outline-none text-sm transition-all">
+                        </div>
+
+                        <div class="bg-emerald-50 rounded-xl p-3.5 flex items-center gap-3 border border-emerald-200 text-emerald-800">
+                            <span class="text-xl">💵</span>
+                            <div class="text-xs">
+                                <p class="font-bold">الدفع عند الاستلام كاش</p>
+                                <p class="text-emerald-600">يمكنك معاينة القطعة قبل الاستلام وسداد القيمة للمندوب</p>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-500 hover:bg-brand-600 text-white py-3.5 rounded-xl font-bold text-sm shadow-md transition-all mt-4">
+                            تأكيد الطلب الآن 📦
+                        </button>
+                    </form>
+                </div>
+            </template>
+
+            <!-- Order Success Confirmation -->
+            <template x-if="orderComplete">
+                <div class="text-center py-6">
+                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-bold">
+                        ✓
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-charcoal mb-1">تم تسجيل طلبك بنجاح! 🎉</h2>
+                    <p class="text-xs text-gray-500 mb-4">كود الطلب: <strong class="text-brand-600 font-mono text-sm" x-text="orderNumber"></strong></p>
+                    
+                    <p class="text-sm text-gray-600 max-w-sm mx-auto mb-6 leading-relaxed">
+                        شكراً لثقتك في <strong class="text-charcoal font-bold">تسبيحة</strong>! سيقوم فريقنا بالتواصل معكِ هاتفياً لتأكيد المقاسات وموعد الشحن.
+                    </p>
+
+                    <a :href="whatsappOrderLink" target="_blank"
+                       class="inline-flex items-center justify-center gap-2 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 rounded-xl shadow-md transition-all text-sm mb-3">
+                        <span>إرسال تفاصيل الطلب عبر واتساب للتأكيد الفوري</span>
+                        <span>💬</span>
+                    </a>
+
+                    <button @click="checkoutOpen = false; orderComplete = false; cart = []; saveCart()"
+                            class="text-xs text-gray-500 hover:text-charcoal transition-colors">
+                        العودة للمتجر الرئيسي
+                    </button>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <!-- ==================== TOAST NOTIFICATION ==================== -->
+    <div x-show="toast.show" x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 translate-y-4"
+         class="fixed bottom-6 left-6 z-[95] bg-charcoal text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 border border-gray-700 max-w-sm">
+        <span class="text-emerald-400 font-bold text-lg">✓</span>
+        <span class="text-xs font-medium" x-text="toast.message"></span>
+    </div>
+
+    <!-- ==================== FLOATING WHATSAPP BUTTON ==================== -->
+    <a href="https://wa.me/201131304107" target="_blank"
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 whatsapp-pulse"
+       title="مراسلتنا عبر واتساب">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- ==================== JAVASCRIPT STATE ENGINE ==================== -->
+    <script>
+    function store() {
+        return {
+            scrolled: false,
+            menuOpen: false,
+            cartOpen: false,
+            checkoutOpen: false,
+            productModal: false,
+            orderComplete: false,
+            selectedProduct: null,
+            selectedSize: '',
+            isCustomSize: false,
+            customMeasurements: { height: '', chest: '', notes: '' },
+            modalQty: 1,
+            activeCategory: 'all',
+            searchQuery: '',
+            orderNumber: '',
+            toast: { show: false, message: '' },
+            contactForm: { name: '', phone: '', message: '' },
+            checkout: { name: '', phone: '', city: '', address: '', notes: '' },
+            displayLimit: 12,
+            cart: (() => {
+                try {
+                    return JSON.parse(localStorage.getItem('tasbeha_cart') || '[]');
+                } catch(e) {
+                    return [];
+                }
+            })(),
+            
+            // Hand-curated Catalog of Tasbeha Handmade Products (40 Verified Unique Pieces)
+            products: [
+                {
+                                "id": 1,
+                                "name": "سالوبيت شروال الديك الفلكلوري الملون",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 950,
+                                "image": "products/product-57.jpg",
+                                "badge": "أيقونة تسبيحة",
+                                "isHandmade": true,
+                                "description": "سالوبيت شروال فضفاض بلون أزرق رمادي بأكمام طويلة وحزام وسط وياقة ببتلات ملونة، يزدان برسمة يدوية دقيقة لديك شعبي فلكلوري بألوان مبهجة وزر خشبي مميز.",
+                                "sizes": [
+                                                "S",
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 2,
+                                "name": "طقم بيوت النوبة السماوي - سديري وبنطلون",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 1180,
+                                "image": "products/product-03.jpg",
+                                "badge": "الأكثر مبيعاً",
+                                "isHandmade": true,
+                                "description": "طقم قطعتين أنيق باللون الأزرق السماوي يضم سديري بأزرار وقصة عصرية مع بنطلون شروال مريح، مرسوم يدوياً ببيوت وقباب النوبة التراثية بألوان زاهية نابضة بالحياة.",
+                                "sizes": [
+                                                "S",
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 3,
+                                "name": "فستان لبني طويل مطرز بالطيور والزهور",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 1120,
+                                "image": "products/tasbeha-prod-02.jpg",
+                                "badge": "تطريز يدوي",
+                                "isHandmade": true,
+                                "description": "فستان ماكسي ناعم بلون لبني هادئ بقصة صدر مزمومة وأكمام منفوخة بأساور، مزين بتطريز يدوي متقن يصور طيوراً رشيقة وفروع زهور ملونة تضفي أنوثة راقية.",
+                                "sizes": [
+                                                "S",
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 4,
+                                "name": "فستان كتان بيج بياقة شال وزهرة مرسومة",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 890,
+                                "image": "products/tasbeha-prod-03.jpg",
+                                "badge": "كتان طبيعي",
+                                "isHandmade": true,
+                                "description": "فستان انسيابي مصنوع من الكتان الطبيعي الفاخر باللون البيج النيود، بياقة شال مريحة وثنيات أمامية، متوج برسم يدوي دافئ لزهرة الأوركيد البرتقالية على الكتف الأيسر.",
+                                "sizes": [
+                                                "S",
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 5,
+                                "name": "فستان أسود مرسوم براقص التنورة والخط العربي",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 1050,
+                                "image": "products/product-31.jpg",
+                                "badge": "تراث مصري",
+                                "isHandmade": true,
+                                "description": "فستان أسود مستوحى من المولد والتراث المصري الصوفي، مرسوم يدوياً بحرفية عالية بحركة راقص التنورة الملتف مع أبيات شعرية بالخط العربي الأصيل.",
+                                "sizes": [
+                                                "S",
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 6,
+                                "name": "طقم بوهيمي بتدرج ألوان غروب الشمس مع شال",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 1250,
+                                "image": "products/product-35.jpg",
+                                "badge": "جديد",
+                                "isHandmade": true,
+                                "description": "إطلالة ساحرة ثلاثية القطع بتدرج ألوان الأومبري المستوحاة من الغروب بين البرتقالي والوردي والبنفسجي، مع بنطلون واسع وشال مكمل للإطلالة.",
+                                "sizes": [
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 7,
+                                "name": "تونيك بنفسجي واسع بوردات كروشيه بارزة",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 780,
+                                "image": "products/tasbeha-prod-01.jpg",
+                                "badge": "كروشيه يدوي",
+                                "isHandmade": true,
+                                "description": "تونيك قطني مريح بقصة درابيه غير متماثلة باللون البنفسجي الملوكي الداكن، مطعم بوحدات ورود وأوراق شجر كروشيه ثلاثية الأبعاد مشغولة يدوياً بالأصفر والرمادي.",
+                                "sizes": [
+                                                "One Size (فضفاض)"
+                                ]
+                },
+                {
+                                "id": 8,
+                                "name": "فستان شروال رمادي مرسوم بالحصان الشعبي",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 920,
+                                "image": "products/product-15.jpg",
+                                "badge": "فلكلور",
+                                "sizes": [
+                                                "S",
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ],
+                                "isHandmade": true,
+                                "description": "فستان بستايل الشروال الفضفاض المريح بلون رمادي مزرق، يزينه رسم يدوي ملهم لحصان المولد الشعبي المزخرف بمثلثات هندسية نوبية ملونة."
+                },
+                {
+                                "id": 9,
+                                "name": "فيست صيفي طويل بنقوش داشيكي وتطريز أفريقي",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 850,
+                                "image": "products/product-55.jpg",
+                                "badge": "ألوان حيوية",
+                                "isHandmade": true,
+                                "description": "فيست صيفي طويل بدون أكمام بفتحة أمامية، مصنوع من قماش بطبعات شمعية أفريقية زاهية تمزج الأزرق التركواز مع الأخضر الزيتوني والأصفر.",
+                                "sizes": [
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 10,
+                                "name": "طقم كروشيه مربعات ملونة مع كاب أسود",
+                                "category": "dresses",
+                                "category_ar": "فساتين مرسومة",
+                                "price": 1350,
+                                "image": "products/product-01.jpg",
+                                "badge": "قطعة فنية",
+                                "isHandmade": true,
+                                "description": "تحفة فنية يدوية تجمع فستاناً طويلاً منسوجاً بمربعات الجراني الكروشيه متعددة الألوان داخل شبكة سوداء متقنة، مع معطف أسود مفتوح يكمل الطابع العصري.",
+                                "sizes": [
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 11,
+                                "name": "فستان عباية بصدرية كروشيه عنابي وشراشيب",
+                                "category": "abayas",
+                                "category_ar": "عبايات فنية",
+                                "price": 1280,
+                                "image": "products/product-17.jpg",
+                                "badge": "أكثر طلباً",
+                                "isHandmade": true,
+                                "description": "تصميم دراماتيكي أنيق يجمع سواد القماش الفاخر مع صدرية كروشيه يدوي مفرغة باللون النبيتي الملكي، مع شراشيب منسدلة تتحرك بخفة مع كل خطوة.",
+                                "sizes": [
+                                                "S",
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 12,
+                                "name": "عباية روب كيمونو بتطريزات فضية تراثية وحزام",
+                                "category": "abayas",
+                                "category_ar": "عبايات فنية",
+                                "price": 1450,
+                                "image": "products/product-22.jpg",
+                                "badge": "فاخر",
+                                "isHandmade": true,
+                                "description": "عباية روب بقصة كيمونو واسعة من الكريب الأسود الملكي، محلاة بشريط تطريز يدوي هندسي فضي على طول الياقة والأكمام مع حزام عريض مطرز للمناسبات الفخمة.",
+                                "sizes": [
+                                                "One Size (فضفاض)"
+                                ]
+                },
+                {
+                                "id": 13,
+                                "name": "عباية سوداء بأكمام ورد كروشيه ملونة بارزة",
+                                "category": "abayas",
+                                "category_ar": "عبايات فنية",
+                                "price": 1190,
+                                "image": "products/product-10.jpg",
+                                "badge": "شغل يدوي",
+                                "isHandmade": true,
+                                "description": "عباية سوداء واسعة كلاسيكية تكتسب بهجة خاصة من ورود الكروشيه الملونة ثلاثية الأبعاد الموزعة على الأكمام والصدر لتعبر عن أناقة الهاند ميد المميزة.",
+                                "sizes": [
+                                                "M",
+                                                "L",
+                                                "XL"
+                                ]
+                },
+                {
+                                "id": 14,
+                                "name": "قفطان عصري بنقوش عربية وأطراف سوداء وحزام",
+                                "category": "abayas",
+                                "category_ar": "عبايات فنية",
+                                "price": 1100,
+                                "image": "products/product-29.jpg",
+                                "badge": "أناقة يومية",
+                                "isHandmade": true,
+                                "description": "قفطان فضفاض انسيابي من قماش بنقوش وحروف عربية مونوكروم، مزين بأشرطة ساتان سوداء على الياقة وحزام خصر متناسق يمنحك مظهراً راقياً ومريحاً.",
+                                "sizes": [
+                                                "One Size (فضفاض)"
+                                ]
+                },
+                {
+                                "id": 15,
+                                "name": "عباية كارديجان أوف وايت بطبقات درابيه كشكش",
+                                "category": "abayas",
+                                "category_ar": "عبايات فنية",
+                                "price": 1150,
+                                "image": "products/product-30.jpg",
+                                "badge": "ناعم وانسيابي",
+                                "isHandmade": true,
+                                "description": "عباية خفيفة باللون السكري الهادئ (أوف وايت) بقصة مفتوحة وطبقات درابيه كشكش ناعمة على الجانبين، تناسب إطلالات الصباح والخروجات الراقية.",
+                                "sizes": [
+                                                "One Size (فضفاض)"
+                                ]
+                },
+                {
+                                "id": 16,
+                                "name": "عباية بونشو سوداء مرسومة بكف فاطمة البوهيمي",
+                                "category": "abayas",
+                                "category_ar": "عبايات فنية",
+                                "price": 1080,
+                                "image": "products/product-38.jpg",
+                                "badge": "رسم يدوي",
+                                "isHandmade": true,
+                                "description": "عباية بونشو فضفاضة من الكريب الأسود مزينة برسمة يدوية دقيقة لكف فاطمة التراثي بألوان الأزرق السماوي والأصفر وعين الحماية البوهيمية.",
+                                "sizes": [
+                                                "One Size (فضفاض)"
+                                ]
+                },
+                {
+                                "id": 17,
+                                "name": "قفطان أسود بشجرة طيور الجنة الملونة وشراشيب",
+                                "category": "abayas",
+                                "category_ar": "عبايات فنية",
+                                "price": 1220,
+                                "image": "products/product-60.jpeg",
+                                "badge": "أبليك وهاند ميد",
+                                "isHandmade": true,
+                                "description": "قفطان أسود فلكلوري واسع مزود بشراشيب جانبية أنيقة، يزدان بلوحة أبليك ورسم يدوي متقن لشجرة فروعها تحمل طيوراً ملونة بديعة وعش عصافير ناعم.",
+                                "sizes": [
+                                                "One Size (فضفاض)"
+                                ]
+                },
+                {
+                                "id": 18,
+                                "name": "كاب أسود بتطريز فلاحي تقليدي وشراشيب حمراء",
+                                "category": "abayas",
+                                "category_ar": "عبايات فنية",
+                                "price": 980,
+                                "image": "products/product-61.jpeg",
+                                "badge": "تطريز إكس",
+                                "isHandmade": true,
+                                "description": "كاب وبونشو تراثي أسود يتوسطه شريط غني بتطريز الغرزة الفلاحية المتقاطعة (Cross-Stitch) بألوان الأحمر والأزرق والأخضر مع شراشيب كروشيه حمراء.",
+                                "sizes": [
+                                                "One Size (فضفاض)"
+                                ]
+                },
+                {
+                                "id": 19,
+                                "name": "شال كشمير ناعم مطرز بفراشات موف وكريستال",
+                                "category": "scarves",
+                                "category_ar": "إسكارفات مطرزة",
+                                "price": 460,
+                                "image": "products/product-56.jpg",
+                                "badge": "الأكثر طلباً",
+                                "isHandmade": true,
+                                "description": "شال كشمير ناعم باللون البيج النيود، مزين بتطريز يدوي ناعم لثلاث فراشات بنفسجية مرصعة بحبات الكريستال البراق وشراشيب أنيقة على الأطراف.",
+                                "sizes": []
+                },
+                {
+                                "id": 20,
+                                "name": "طقم كوفية طويلة وآيس كاب رمادي بزهور كروشيه",
+                                "category": "scarves",
+                                "category_ar": "إسكارفات مطرزة",
+                                "price": 520,
+                                "image": "products/product-53.jpg",
+                                "badge": "طقم شتوي",
+                                "isHandmade": true,
+                                "description": "طقم شتوي دافئ باللون الرمادي الفحمي مصنوع من خيوط صوف معالجة، يضم كوفية طويلة مضلعة وقبعة آيس كاب مرصعة بزهور كروشيه مجسمة بألوان اللافندر والأخضر.",
+                                "sizes": []
+                },
+                {
+                                "id": 21,
+                                "name": "قفازات كروشيه وردي ناعمة بغرزة البف المجسمة",
+                                "category": "scarves",
+                                "category_ar": "إسكارفات مطرزة",
+                                "price": 240,
+                                "image": "products/product-40.jpg",
+                                "badge": "شغل يدوي",
+                                "isHandmade": true,
+                                "description": "قفازات بدون أصابع باللون الوردي الباستيل، مشغولة يدوياً بغرزة البف المجسمة فائقة النعومة لتمنح يديك الدفء والحرية الكاملة في الاستخدام.",
+                                "sizes": []
+                },
+                {
+                                "id": 22,
+                                "name": "قفازات صوفية كروشيه بمربعات الجراني الملونة",
+                                "category": "scarves",
+                                "category_ar": "إسكارفات مطرزة",
+                                "price": 260,
+                                "image": "products/product-45.jpg",
+                                "badge": "صوف دافئ",
+                                "isHandmade": true,
+                                "description": "قفازات بدون أصابع من الصوف البنفسجي المضلع، يتوسط ظهر اليد مربع جراني كروشيه كلاسيكي بألوان الباستيل المبهجة.",
+                                "sizes": []
+                },
+                {
+                                "id": 23,
+                                "name": "قفازات شتوية بنفسجية بزهرة كروشيه مجسمة بارزة",
+                                "category": "scarves",
+                                "category_ar": "إسكارفات مطرزة",
+                                "price": 250,
+                                "image": "products/product-52.jpg",
+                                "badge": "دفء وأناقة",
+                                "isHandmade": true,
+                                "description": "قفازات بدون أصابع تجمع اللون البنفسجي مع شريط أوف وايت مشكول بزهرة كروشيه موف بارزة وتطريز أوراق شجر برتقالية دافئة.",
+                                "sizes": []
+                },
+                {
+                                "id": 24,
+                                "name": "أساور معصم تريكو دافئة بألوان علم فلسطين",
+                                "category": "scarves",
+                                "category_ar": "إسكارفات مطرزة",
+                                "price": 160,
+                                "image": "products/product-42.jpg",
+                                "badge": "رمزية وطنية",
+                                "isHandmade": true,
+                                "description": "زوج أساور معصم دافئة محبوكة بتريكو متقن يجسد ألوان علم فلسطين الحبيبة (الأحمر، الأخضر، الأبيض، والأسود) بغرز بارزة ومرنة.",
+                                "sizes": []
+                },
+                {
+                                "id": 25,
+                                "name": "شنطة كروس أوف وايت بنقشة المروحة وقفل فضي",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 480,
+                                "image": "products/product-04.jpg",
+                                "badge": "حقائب سواريه",
+                                "isHandmade": true,
+                                "description": "حقيبة كروس هاند ميد فاخرة باللون السكري منسوجة يدوياً بغرزة المروحة البارزة، مزودة بقفل ضغط معدني فضي وسلسلة كروس أنيقة للمناسبات وسهرات المساء.",
+                                "sizes": []
+                },
+                {
+                                "id": 26,
+                                "name": "شنطة كروس سوداء مبطنة بمربعات منسوجة وقفل ذهبي",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 490,
+                                "image": "products/product-13.jpg",
+                                "badge": "كلاسيك فاخر",
+                                "isHandmade": true,
+                                "description": "حقيبة سهرة كروس باللون الأسود الملكي بنسيج مربعات بارزة متقنة، تزدان بقفل ضغط ذهبي لامع وسلسلة معدنية متينة تناسب كافة أزيائك.",
+                                "sizes": []
+                },
+                {
+                                "id": 27,
+                                "name": "حقيبة توت باج كحلي بتطريز القطة وفروع الورد",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 310,
+                                "image": "products/product-09.jpg",
+                                "badge": "تطريز يدوي",
+                                "isHandmade": true,
+                                "description": "حقيبة كتف توت باج عملية من قماش الكانفاس الكحلي المتين، مطرزة يدوياً برسمة خيطية رقيقة لقطة مسترخية يحيط بها فرع من أزهار الربيع الملونة.",
+                                "sizes": []
+                },
+                {
+                                "id": 28,
+                                "name": "حقيبة توت باج كانفاس طبيعي بطوق الزهور المطرز",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 320,
+                                "image": "products/product-12.jpg",
+                                "badge": "كانفاس طبيعي",
+                                "isHandmade": true,
+                                "description": "حقيبة كانفاس بلون القطن الطبيعي مزينة بتطريز يدوي متقن بشرائط الستان يصور إكليلاً دائرياً من ورود الروز والزهور الملونة بلمسة أنثوية هادئة.",
+                                "sizes": []
+                },
+                {
+                                "id": 29,
+                                "name": "حقيبة كروشيه يدوي عين الحسود خضراء بشراشيب",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 360,
+                                "image": "products/product-11.jpg",
+                                "badge": "بوهيمي",
+                                "isHandmade": true,
+                                "description": "حقيبة كتف دائرية مشغولة يدوياً بالكروشيه على شكل عين الحسود الواقية باللون الزيتوني والأبيض والأسود مع شراشيب سفلية طويلة باللون الأخضر الليموني.",
+                                "sizes": []
+                },
+                {
+                                "id": 30,
+                                "name": "حقيبة كروشيه يدوي عين الحسود زرقاء بشراشيب تركواز",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 360,
+                                "image": "products/product-25.jpg",
+                                "badge": "بوهيمي",
+                                "isHandmade": true,
+                                "description": "حقيبة كروشيه بوهيمية بتصميم عين الحماية التراثية بدرجات الأزرق الملكي والبيج والأبيض، تنتهي بشراشيب كثيفة باللون التركواز المتدلي.",
+                                "sizes": []
+                },
+                {
+                                "id": 31,
+                                "name": "شنطة سيرما تراثية بيد خيزران بامبو وشراشيب",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 550,
+                                "image": "products/product-59.jpeg",
+                                "badge": "بامبو طبيعي",
+                                "isHandmade": true,
+                                "description": "حقيبة يد تراثية راقية مصنوعة من قماش الجوبلان والسيرما الهندسي المذهب، بمقبض يد مقوس من خشب البامبو الطبيعي وشريط ترتر وشراشيب بيضاء.",
+                                "sizes": []
+                },
+                {
+                                "id": 32,
+                                "name": "طقم فيست وشنطة كروشيه بمربعات الجراني الباستيل",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 720,
+                                "image": "products/product-58.jpeg",
+                                "badge": "طقم متطابق",
+                                "isHandmade": true,
+                                "description": "طقم متكامل مميز يضم فيست كروشيه صيفي بدون أكمام وشنطة يد متناسقة، مشغولين بمربعات الجراني الكلاسيكية بألوان الباستيل مع إطار زيتي داكن.",
+                                "sizes": []
+                },
+                {
+                                "id": 33,
+                                "name": "عقد وجردان خرز نول يدوي طويل بعيون النمر",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 380,
+                                "image": "products/product-46.jpg",
+                                "badge": "خرز نول",
+                                "isHandmade": true,
+                                "description": "عقد جردان طويل منسوج حبة بحبة على النول اليدوي من خرز الكريستال الدقيق، يصور ببراعة لافتة وجه النمر بنظراته القوية وشراشيب خرزية منسدلة.",
+                                "sizes": []
+                },
+                {
+                                "id": 34,
+                                "name": "عقد خرز ملكي أزرق متدلي بزخارف التوليب",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 390,
+                                "image": "products/product-47.jpg",
+                                "badge": "أناقة ملكية",
+                                "isHandmade": true,
+                                "description": "عقد جردان فاخر باللون الأزرق الكوبالت الملكي مع خطوط بيضاء، يضم لوحتين متطابقتين لزهور التوليب مع شلال من خيوط الخرز المتدرجة على الصدر.",
+                                "sizes": []
+                },
+                {
+                                "id": 35,
+                                "name": "عقد وجردان خرز يدوي بغزال الشتاء الأحمر",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 370,
+                                "image": "products/product-51.jpg",
+                                "badge": "شغل يدوي",
+                                "isHandmade": true,
+                                "description": "عقد جردان تراثي مشغول يدوياً بالخرز الدقيق بتصميم غزال الشتاء القرمزي فوق أرضية بيضاء ورمادية ثلجية مع شراشيب خرز كريستال في النهاية.",
+                                "sizes": []
+                },
+                {
+                                "id": 36,
+                                "name": "عقد خرز يدوي بعين الحسود وريشة بوهيمية",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 340,
+                                "image": "products/product-49.jpg",
+                                "badge": "خرز بوهيمي",
+                                "isHandmade": true,
+                                "description": "قلادة نول يدوية بألوان الخوخ الهادئة والأسود، مزينة برسمة عين الحسود الزرقاء وريشة طائر ملونة ودوائر حلزونية تضفي طابعاً بوهيمياً متفرداً.",
+                                "sizes": []
+                },
+                {
+                                "id": 37,
+                                "name": "عقد خرز هندسي ملون بألوان الطيف وشرائط متدلية",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 330,
+                                "image": "products/product-50.jpg",
+                                "badge": "ألوان الطيف",
+                                "isHandmade": true,
+                                "description": "عقد صدرية خرز هاند ميد عريض يرتكز على معين هندسي بألوان قوس قزح مع شرائط خرز طولية متعددة الألوان تتدلى بانسيابية فوق القمصان والعبايات.",
+                                "sizes": []
+                },
+                {
+                                "id": 38,
+                                "name": "إكسسوار عنق سلاسل فضية انسيابي متعدد الطبقات",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 290,
+                                "image": "products/product-06.jpg",
+                                "badge": "تصميم حصري",
+                                "isHandmade": true,
+                                "description": "قلادة سلاسل معدنية فضية متعددة الطبقات مصممة لتزين العبايات والبلوزات السادة وتمنحك هيبة وإشراقة عصرية جذابة في سهراتك ومناسباتك.",
+                                "sizes": []
+                },
+                {
+                                "id": 39,
+                                "name": "كولة وعقد كروشيه هلالي بزهور ملونة مجسمة",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 280,
+                                "image": "products/product-16.jpg",
+                                "badge": "كروشيه 3D",
+                                "isHandmade": true,
+                                "description": "طوق رقبة هلالي فريد مشغول بالكروشيه اليدوي ومطعم بصف من وحدات الورد ثلاثية الأبعاد بالأصفر والوردي والأزرق مع شراشيب كروشيه صفراء تتدلى على الصدر.",
+                                "sizes": []
+                },
+                {
+                                "id": 40,
+                                "name": "معلقة حائط دريم كاتشر كروشيه بنفسجي وأوف وايت",
+                                "category": "accessories",
+                                "category_ar": "إكسسوارات وحقائب",
+                                "price": 260,
+                                "image": "products/product-20.jpg",
+                                "badge": "ديكور يدوي",
+                                "isHandmade": true,
+                                "description": "صائدة أحلام (دريم كاتشر) يدوية الصنع متقنة من الكروشيه الدائري المفرغ باللونين البنفسجي والأوف وايت، مع شرائط كروشيه متدلية محلاة بأوراق شجر وحبات خشبية.",
+                                "sizes": []
+                }
+],
+            
+            get filteredProducts() {
+                let list = this.products;
+                if (this.activeCategory !== 'all') {
+                    list = list.filter(p => p.category === this.activeCategory);
+                }
+                if (this.searchQuery && this.searchQuery.trim() !== '') {
+                    const q = this.searchQuery.trim().toLowerCase();
+                    list = list.filter(p => 
+                        p.name.toLowerCase().includes(q) || 
+                        p.description.toLowerCase().includes(q) || 
+                        p.category_ar.includes(q)
+                    );
+                }
+                return list;
+            },
+            
+            get displayedProducts() {
+                return this.filteredProducts.slice(0, this.displayLimit);
+            },
+            
+            get cartCount() {
+                return this.cart.reduce((sum, item) => sum + item.qty, 0);
+            },
+            
+            get cartTotal() {
+                return this.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            },
+            
+            get directWhatsAppLink() {
+                if (!this.selectedProduct) return '#';
+                let msg = `مرحباً براند تسبيحة 👋\nأود الاستفسار والطلب لقطعة:\n🛍️ *${this.selectedProduct.name}*\n💰 السعر: ${this.selectedProduct.price} ج.م (شحن مجاني 🎉)`;
+                if (this.isCustomSize) {
+                    msg += `\n✂️ *طلب تفصيل بمقاسات خاصة:*`;
+                    if (this.customMeasurements.height) msg += `\n• الطول المطلوب: ${this.customMeasurements.height}`;
+                    if (this.customMeasurements.chest) msg += `\n• محيط الصدر/العرض: ${this.customMeasurements.chest}`;
+                    if (this.customMeasurements.notes) msg += `\n• ملاحظات: ${this.customMeasurements.notes}`;
+                } else if (this.selectedSize) {
+                    msg += `\n📏 المقاس المطلوب: ${this.selectedSize}`;
+                }
+                if (this.modalQty > 1) msg += `\n🔢 الكمية: ${this.modalQty}`;
+                return `https://wa.me/201131304107?text=${encodeURIComponent(msg)}`;
+            },
+
+            get whatsappOrderLink() {
+                let msg = `🛍️ *طلب جديد من موقع تسبيحة*\n\nكود الطلب: ${this.orderNumber}\n\n`;
+                this.cart.forEach(item => {
+                    msg += `• ${item.name}`;
+                    if (item.size) msg += ` [${item.size}]`;
+                    msg += ` × ${item.qty} = ${item.price * item.qty} ج.م\n`;
+                });
+                msg += `\n💰 *الإجمالي النهائي:* ${this.cartTotal} ج.م (الدفع عند الاستلام)\n🚚 *الشحن:* مجاناً لكافة المحافظات (عرض الافتتاح 🎉)\n`;
+                msg += `\n👤 *الاسم:* ${this.checkout.name}`;
+                msg += `\n📱 *الموبايل:* ${this.checkout.phone}`;
+                msg += `\n📍 *العنوان:* ${this.checkout.city} — ${this.checkout.address}`;
+                if (this.checkout.notes) msg += `\n📝 *ملاحظات:* ${this.checkout.notes}`;
+                return `https://wa.me/201131304107?text=${encodeURIComponent(msg)}`;
+            },
+            
+            filterCategory(cat) {
+                this.activeCategory = cat;
+                this.displayLimit = 12;
+                const section = document.getElementById('products');
+                if (section && window.scrollY < section.offsetTop - 150) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                }
+            },
+            
+            openProduct(product) {
+                this.selectedProduct = product;
+                this.isCustomSize = false;
+                this.customMeasurements = { height: '', chest: '', notes: '' };
+                this.selectedSize = (product.sizes && product.sizes.length > 0) ? product.sizes[0] : '';
+                this.modalQty = 1;
+                this.productModal = true;
+            },
+            
+            quickWhatsApp(product) {
+                let msg = `مرحباً تسبيحة 👋\nأود طلب القطعة:\n🛍️ *${product.name}*\n💰 السعر: ${product.price} ج.م (شحن مجاني 🎉)`;
+                window.open(`https://wa.me/201131304107?text=${encodeURIComponent(msg)}`, '_blank');
+            },
+            
+            addToCart(product) {
+                const defaultSize = (product.sizes && product.sizes.length > 0) ? product.sizes[0] : '';
+                const existing = this.cart.find(i => i.id === product.id && i.size === defaultSize);
+                if (existing) {
+                    existing.qty++;
+                } else {
+                    this.cart.push({ ...product, qty: 1, size: defaultSize });
+                }
+                this.saveCart();
+                this.showToast('تمت إضافة "' + product.name + '" إلى السلة ✓');
+            },
+            
+            addToCartFromModal() {
+                const p = this.selectedProduct;
+                let sizeLabel = this.selectedSize;
+                if (this.isCustomSize) {
+                    let parts = [];
+                    if (this.customMeasurements.height) parts.push(`طول ${this.customMeasurements.height}`);
+                    if (this.customMeasurements.chest) parts.push(`صدر ${this.customMeasurements.chest}`);
+                    if (this.customMeasurements.notes) parts.push(this.customMeasurements.notes);
+                    sizeLabel = 'تفصيل خاص' + (parts.length > 0 ? ` (${parts.join(', ')})` : '');
+                }
+                const existing = this.cart.find(i => i.id === p.id && i.size === sizeLabel);
+                if (existing) {
+                    existing.qty += this.modalQty;
+                } else {
+                    this.cart.push({ ...p, qty: this.modalQty, size: sizeLabel });
+                }
+                this.saveCart();
+                this.productModal = false;
+                this.showToast('تمت إضافة "' + p.name + '" إلى السلة ✓');
+            },
+            
+            updateQty(index, delta) {
+                this.cart[index].qty += delta;
+                if (this.cart[index].qty <= 0) {
+                    this.cart.splice(index, 1);
+                }
+                this.saveCart();
+            },
+            
+            removeFromCart(index) {
+                this.cart.splice(index, 1);
+                this.saveCart();
+            },
+            
+            saveCart() {
+                localStorage.setItem('tasbeha_cart', JSON.stringify(this.cart));
+            },
+            
+            placeOrder() {
+                this.orderNumber = 'TSB-' + Math.floor(100000 + Math.random() * 900000);
+                this.orderComplete = true;
+                this.showToast('تم تسجيل الطلب بنجاح! 🎉');
+            },
+            
+            submitContact() {
+                this.showToast('تم إرسال رسالتك بنجاح! سيتواصل معكِ فريق تسبيحة قريباً ✨');
+                this.contactForm = { name: '', phone: '', message: '' };
+            },
+            
+            showToast(msg) {
+                this.toast = { show: true, message: msg };
+                setTimeout(() => { this.toast.show = false; }, 3500);
+            },
+            
+            init() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            }
+        }
+    }
+    </script>
+</body>
+</html>
